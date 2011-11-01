@@ -1,0 +1,56 @@
+<div id="main_child_form">
+    <%= form_for(@child) do |f| %>
+      <% if @child.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@child.errors.count, "error") %> prohibited this child from being saved:</h2>
+
+          <ul>
+          <% @child.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <table>
+           <tr>
+                <td><%= f.label :name %></td>
+                <td><%= f.text_field :name %></td>
+           </tr>
+           <tr>
+                <td><%= f.label :date_of_birth %></td>
+                <td><%= f.date_select :date_of_birth %></td>
+           </tr>
+           <tr>
+                <td><%= f.label :status %></td>
+                <td><%= f.select :status, Child_status::STATUS,
+                                     :prompt => 'Search in progress',
+                                     :disabled => true %></td>
+            </tr>
+            <tr>
+                <td><%= f.label :police_abstract_no %></td>
+                <td><%= f.text_field :police_abstract_no%></td>
+            </tr>
+            <tr>
+                <td><%= f.label :gender %></td>
+                <td><%= f.text_field :gender %></td>
+            </tr>
+            <tr>
+                <td><%= f.label :missing_town %></td>
+                <td><%= f.text_field :missing_town %></td>
+            </tr>
+            <tr>
+                <td><%= f.label :missing_city %></td>
+                <td><%= f.text_field :missing_city %></td>
+            </tr>
+            <tr>
+                <td><%= f.label :additional_info %></td>
+                <td><%= f.text_area :additional_info, :rows => 3 %></td>
+            </tr>
+      </table>
+      <div class="actions">
+         <%= f.submit :remote => true%>
+      </div>
+    <% end %>
+</div>
+

@@ -1,0 +1,45 @@
+<h1><%= @child.name %></h1>
+<p id="notice"><%= notice %></p>
+<table>
+           <tr>
+                <td>Name:</td>
+                <td><%= @child.name %></td>
+           </tr>
+           <tr>
+                <td>Date of birth:</td>
+                <td><%= @child.date_of_birth %></td>
+           </tr>
+           <tr>
+                <td>Status:</td>
+                <td><%= @child.status %></td>
+            </tr>
+            <tr>
+                <td>Police abstract no:</td>
+                <td><%= @child.police_abstract_no%></td>
+            </tr>
+            <tr>
+                <td>Created by:</td>
+                <td><%= @child.created_by %></td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+                <td><%= @child.gender %></td>
+            </tr>
+            <tr>
+                <td>Missing town:</td>
+                <td><%= @child.missing_town %></td>
+            </tr>
+            <tr>
+                <td>Missing city:</td>
+                <td><%= @child.missing_city %></td>
+            </tr>
+            <tr>
+                <td>Additional info:</td>
+                <td><%= @child.additional_info %></td>
+            </tr>
+      </table>
+ <br />
+<%= link_to 'Edit', edit_child_path(@child),:onclick =>
+            "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %> |
+<%= link_to 'Back', children_path %>

@@ -1,0 +1,5 @@
+#page.replace_html('child', render(@child))
+
+page[:current_child].visual_effect :highlight,
+                                  :startcolor => "#88ff88",
+                                  :endcolor => "114411"

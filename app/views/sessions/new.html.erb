@@ -1,0 +1,26 @@
+<div class="users_form">
+  <% if flash[:alert] %>
+       <p id= "notice"><%= flash[:alert]%></p>
+  <%end%>
+
+  <%= form_tag do %>
+    <fieldset>
+      <legend>Please Log In</legend>
+      <table>
+          <tr>
+            <td><label for="email">Email: </label></td>
+            <td><%= text_field_tag :email, params[:email], :size => 40%></td>
+          </tr>
+          <tr>
+            <td><label for="password">Password: </label></td>
+            <td><%= password_field_tag :password, params[:password], :size => 40%></td>
+          </tr>
+          <tr>
+            <td><%= submit_tag "Login"%> </td>
+          </tr>
+      </table>
+    </fieldset>
+      <br />
+    <p>New user? <%= link_to "Sign up", new_user_path %></p>
+  <%end%>
+</div>

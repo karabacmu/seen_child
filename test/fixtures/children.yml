@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date_of_birth: 2011-10-30
+  status: MyString
+  police_abstract_no: MyString
+  created_by: MyString
+  gender: MyString
+  missing_town: MyString
+  missing_city: MyString
+  additional_info: MyString
+
+two:
+  name: MyString
+  date_of_birth: 2011-10-30
+  status: MyString
+  police_abstract_no: MyString
+  created_by: MyString
+  gender: MyString
+  missing_town: MyString
+  missing_city: MyString
+  additional_info: MyString

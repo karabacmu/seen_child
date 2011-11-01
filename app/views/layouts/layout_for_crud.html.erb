@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seen Child: Help Find These Children</title>
+  <%= stylesheet_link_tag    "scaffolds"%>
+  <%= stylesheet_link_tag    "modalbox", :media=> "screen"%>
+  <%= stylesheet_link_tag    "children" , :media => "all" %>
+  <%= javascript_include_tag "prototype" %>
+  <%= javascript_include_tag "scriptaculous" %>
+  <%= javascript_include_tag "modalbox" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id= "child">
+  <div>
+     <%= yield %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<div id="report_child">
+    <h1>Report Missing Child</h1>
+    <p>After completion of a police abstract form (found at the police station):</p>
+    <ol>
+      <li>
+          Visit our offices, <%= link_to 'see location', contact_path, :onclick =>
+            "Modalbox.show(this.href, {title: this.title, width: 600}); return false;"%> or,
+      </li>
+      <li>
+         Email/Fax the information of the child, details of the situation, the police case number
+         as well as a photo of the child to: <a href="mailto:email@seenchild.co.ke">email@seenchild.org</a>
+      </li>
+    </ol>
+</div>
+<br />
+<%= link_to 'Add Child Information', 'children/new', :onclick =>
+            "Modalbox.show(this.href, {title: this.title, width: 600}); return false;"%>

@@ -1,0 +1,32 @@
+<div id= "child_list">
+    <h1>Listing children</h1>
+    <table>
+     <% @children.each do |child| %>
+     <% if child == @current_child %>
+        <tr id= "current_child">
+     <% else %>
+      <tr class="<% cycle('list_line_odd','list_line_even')%>">
+        <!--show image here-->
+         <td class="list_description">
+           <dl>
+              <dt><%= child.name %>: <%= child.missing_city %> </dt>
+              <dd><%= truncate(strip_tags(child.additional_info),
+                       :length => 120)%></dd>
+           </dl>
+         </td>
+         <td class="list_actions">
+            <%= link_to 'Show', child, :onclick =>
+            "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %><br/>
+            <%= link_to 'Edit', edit_child_path(child), :onclick =>
+            "Modalbox.show(this.href, {title: this.title, width: 600}); return false;"%><br/>
+         </td>
+        </tr>
+     <% end %>
+     <% end %>
+    </table>
+</div>
+<br />
+
+<%= link_to 'Add Child Information', new_child_path, :onclick =>
+            "Modalbox.show(this.href, {title: this.title, width: 600}); return false;"%>
+

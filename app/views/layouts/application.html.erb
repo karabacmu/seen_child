@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seen Child: Help Find These Children</title>
+  <%= stylesheet_link_tag    "scaffolds"%>
+  <%= stylesheet_link_tag    "modalbox", :media=> "screen"%>
+  <%= stylesheet_link_tag    "children" , :media => "all" %>
+  <%= javascript_include_tag "prototype" %>
+  <%= javascript_include_tag "scriptaculous" %>
+  <%= javascript_include_tag "modalbox" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id= "child">
+    <div id="banner">
+      <%= @page_title || "Seen Child: Rescue The Children" %>
+    </div>
+   <div id="columns">
+    <div id="side">
+      <div id="links">
+          <%= link_to "Home", root_path %> <br />
+          <%= link_to "Report_a_Child", report_path %> <br />
+          <%= link_to "Missing Children", children_path %> <br />
+          <%= link_to 'About', about_path %> <br />
+          <%= link_to 'Contact', contact_path %> <br />
+      </div>
+      <% if session[:user_id] %>
+          <br />
+          <div id="links">
+
+              <%= link_to "View Users", users_url %> <br />
+              <%= button_to 'Logout', logout_path, :method => :delete %> <br />
+          </div>
+      <%end%>
+    </div>
+  </div>
+  <div id="main">
+     <%= yield %>
+  </div>
+</body>
+</html>

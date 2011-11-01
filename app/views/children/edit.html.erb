@@ -1,0 +1,7 @@
+<h1>Edit Child Information</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @child, :onclick =>
+            "Modalbox.show(this.href, {title: this.title, width: 600}); return false;"%> |
+<%= link_to 'Back', children_path %>
